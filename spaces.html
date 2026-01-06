@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" />
+    <title>Spaces</title>
+    <style>
+       * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 28px 30px;
+            background-color: #d9d39c;
+            width: 100%;
+            font-size: 22px;
+        }
+        .header ul {
+            list-style: none;
+            display: flex;
+            padding-left: 20%;
+        }
+        .header li {
+            margin-right: 22px;
+        }
+        .header a {
+            position: relative;
+            font-family: 'Ibarra Real Nova', serif;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.651);
+            border-radius: 20px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        .header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon i {
+            font-size: 25px;
+            padding-right: 15px;
+        }
+        .section-1 {
+            width: 100%;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-bg {
+            background-image: url(background.jpg);
+            width: 100%;
+            height: 350px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .image-bg h1 {
+            font-size: 60px;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            font-family: 'Inria Sans';
+            color: #fff;
+            margin-top: 120px;
+        }
+        .select-spaces {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .select-spaces h3 {
+            padding: 20px;
+            text-align: left;
+            font-size: 25px;
+            font-family: 'Inter';
+            margin-top: 30px;
+            font-weight: 100;
+        }
+        .event-frame {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .event-frame p, h4 {
+            padding-left: 20px;
+        }
+        .event-frame h4 {
+            padding-bottom: 12px;
+        }
+        .event-frame p {
+            padding-bottom: 20px;
+        }
+        .event1 a, .event2 a {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(119, 117, 117);
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+        .event1 a:hover, .event2 a:hover {
+            color: black;
+        }
+        .event1, .event2 {
+            width: calc(50% - 40px);
+            height: auto;
+            border: 1px solid rgba(128, 128, 128, 0.288);
+            margin-bottom: 40px;
+            text-align: left;
+            font-size: 20px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        .select-spaces img {
+            width: 100%;
+            height: 238px;
+            object-fit: cover;
+        }
+        .select-spaces input[type="submit"] {
+            padding: 10px 30px;
+            border-radius: 10px;
+            background-color: #F5ED34;
+            font-weight: bold;
+            font-family: 'Inter';
+            font-size: 17px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.5s ease;
+            display: block;
+            margin: 20px auto;
+        }
+        .select-spaces input[type="submit"]:hover {
+            background-color: #e6df26;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home2.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="event.html">EVENT & SPACE</a></li>
+            <li><a href="booking.html">BOOK NOW</a></li>
+        </ul>
+        <div class="right-icon">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="section-1">
+        <div class="image-bg">
+            <h1>THE WANKAY EVENT SPACE</h1>
+        </div>
+        <div class="select-spaces">
+            <h3>Choose Spaces</h3>
+            <div class="event-frame">
+                <div class="event1">
+                    <img src="image8.jpg" alt=""><br>
+                    <h4>Outdoor Dining Area </h4>
+                    <p>
+                        <span style="font-size: 18px;">
+                            Size : 1,600 sqft <br>
+                            Max Guests : 1000 pax
+                        </span>
+                    </p>
+                    <a href="moredetails">more details</a><br>
+                    <input type="submit" name="eventType" id="parties" value="Select">
+                </div>
+                <div class="event2">
+                    <img src="indoor2.jpg" alt=""><br>
+                    <h4>Indoor Dining Area </h4>
+                    <p>
+                        <span style="font-size: 18px;">
+                            Size : 1,800 sqft <br>
+                            Max Guests : 1000 pax
+                        </span>
+                    </p>
+                    <a href="moredetails">more details</a><br>
+                    <input type="submit" name="eventType" id="parties" value="Select">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 28px 30px;
+            background-color: #d9d39c;
+            width: 100%;
+            font-size: 22px;
+        }
+        .header ul {
+            list-style: none;
+            display: flex;
+            padding-left: 20%;
+        }
+        .header li {
+            margin-right: 22px;
+        }
+        .header a {
+            position: relative;
+            font-family: 'Ibarra Real Nova', serif;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.651);
+            border-radius: 20px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        .header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon i {
+            font-size: 25px;
+            padding-right: 15px;
+        }
+        .home-frame {
+            width: 100%;
+            height: 600px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .home-text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 70px;
+        }
+        .home-text h1 {
+            padding-bottom: 40px;
+            font-family: 'Ibarra Real Nova', serif;
+            color: #024308;
+            font-weight: bold;
+            font-size: 55px;
+        }
+        .home-text p {
+            max-width: 700px;
+            font-size: 25px;
+            line-height: 1.5;
+            text-align: justify;
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: bold;
+        }
+        .home-frame img {
+            width: 50%;
+            height: 100%;
+        }
+        .footer {
+            width: 100%;
+            background-color: #8C825F;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            padding: 40px 0;
+        }
+        .footer h2 {
+            padding-top: 25px;
+            padding-bottom: 10px;
+            font-size: 45px;
+            color: #024308;
+            font-family: 'Ibarra Real Nova', serif;
+        }
+        .footer p {
+            max-width: 770px;
+            font-size: 28px;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.5;
+            color: aliceblue;
+            font-family: 'Ibarra Real Nova', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home2.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="event.html">EVENT & SPACE</a></li>
+            <li><a href="booking.html">BOOK NOW</a></li>
+        </ul>
+        <div class="right-icon">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="home-frame">
+        <div class="home-text">
+            <h1>PRIME COMMERCIAL SPACE WITH A SPECTACULAR VIEW OF TERENGGANU</h1>
+            <p>An eight acres prime real estate with a breathtaking view of the Kuala Terengganu City skyline. Discover the unique business potential complete with essential retail F&B facilities and explore the serene atmosphere with 360-degrees of natural rainforest ambiance. The Wankay Spaces is not just a home, it’s an experience.</p>
+        </div>
+        <img src="hall.png" alt="Event Hall">
+    </div>
+    <div class="footer">
+        <h2>IN THE HEART OF THE CITY</h2>
+        <p>Located in a premier neighbourhood of Gong Badak just minutes away from the Kuala Terengganu City Centre, The Wankay Spaces offers complete amenities for retail F&B and private functions with a dedicated one-way road for ease of traffic and ample parking spaces for customers and private event guests.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Event & Space</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 28px 30px;
+            background-color: #d9d39c;
+            width: 100%;
+            font-size: 22px;
+        }
+        .header ul {
+            list-style: none;
+            display: flex;
+            padding-left: 20%;
+        }
+        .header li {
+            margin-right: 22px;
+        }
+        .header a {
+            position: relative;
+            font-family: 'Ibarra Real Nova', serif;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.651);
+            border-radius: 20px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        .header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon i {
+            font-size: 35px;
+            padding-right: 20px;
+        }
+        .section-1 {
+            width: 100%;
+            padding: 20px;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+        .section-1 h1 {
+            font-size: 50px;
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 100;
+            padding-left: 45px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .section-1 p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.705);
+        }
+        .event-frame, .spaces-frame {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 50px;
+            padding-right: 50px;
+            margin-bottom: 40px;
+        }
+        .card-frame {
+            width: calc(33.333% - 40px);
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .card-frame img {
+            width: 100%;
+            height: auto;
+        }
+        .card-frame h2 {
+            padding: 10px 20px 10px 20px;
+            font-size: 24px;
+            font-family: 'Ibarra Real Nova', serif;
+        }
+        .card-frame p {
+            padding: 0 20px 20px 20px;
+            text-align: justify;
+            font-family: 'Inter', sans-serif;
+        }
+        .size-frame, .capacity-frame {
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 10px;
+        }
+        .size-frame {
+            background-color: #60D056;
+            color: whitesmoke;
+            margin-top: 10px;
+        }
+        .capacity-frame {
+            background-color: #F5ED34;
+            color: rgba(0, 0, 0, 0.699);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home2.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="event.html">EVENT & SPACE</a></li>
+            <li><a href="booking.html">BOOK NOW</a></li>
+        </ul>
+        <div class="right-icon">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="section-1">
+        <h1>Event</h1>
+        <div class="event-frame">
+            <div class="card-frame">
+                <img src="beday.jpg" alt="">
+                <h2>Parties and Celebrations</h2>
+                <p>We eagerly anticipate hosting your celebrations, whether grand or intimate, in our award-winning venue nestled in the heart of Terengganu city. Allow us to handle every detail, from entertainment options provided by our restaurant to catering needs spanning from Malay cuisine to Western canapés, encompassing the finest of both worlds. Our menu selections can be tailored to fit your budget and event requirements.</p>
+            </div>
+            <div class="card-frame">
+                <img src="hitea.jpg" alt="">
+                <h2>Hi-Tea Events</h2>
+                <p>Join us for an afternoon of sophistication and relaxation, where every detail is meticulously crafted to delight your senses. Immerse yourself in the elegant ambiance of our venue as you connect with colleagues, clients, and friends in style. Our hi-tea event promises to be a haven of refinement and enjoyment.</p>
+            </div>
+            <div class="card-frame">
+                <img src="wed.jpg" alt="">
+                <h2>Wedding Celebrations</h2>
+                <p>Enjoy your big day and leave the details to us. We are able to curate wedding packages to meet your needs including bridal showers, wedding receptions, banquets, brunches and even after-parties. Simplify your wedding planning experience by hosting your special occasion at the Wankay Space.</p>
+            </div>
+        </div>
+        <h1>Spaces</h1>
+        <div class="spaces-frame">
+            <div class="card-frame">
+                <img src="outdoor.jpg" alt="">
+                <h2>Outdoor Dining Area</h2>
+                <p>The outdoor dining area is one of the main highlights of the Wankay Event Space. Enjoy the natural breeze and beautiful Terengganu skyline view. Surrounded by lush greenery, this covered deck which fits 50px is perfect for intimate social events.</p>
+                <div class="size-frame">Size</div>
+                <b>1,200 sqft</b>
+                <div class="capacity-frame">Capacity</div>
+                <b>Cocktail - 300 pax</b><br>
+                <b>Classroom - 200 pax</b>
+            </div>
+            <div class="card-frame">
+                <img src="hallvenue.png" alt="">
+                <h2>Indoor Venue & Hall</h2>
+                <p>With its large, spacious hall, captivating KL skyline view, beautiful building with wood floors, high ceilings, and a touch of heritage and elegance, The Wankay Space is the epitome of an intimate indoor wedding venue.</p>
+                <div class="size-frame">Size</div>
+                <b>18,000 sqft</b>
+                <div class="capacity-frame">Capacity</div>
+                <b>As Full Venue - 1000 pax</b><br>
+                <b>As a Section - 900 pax</b>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

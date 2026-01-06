@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Per Pax</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+       * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 28px 30px;
+            background-color: #d9d39c;
+            width: 100%;
+            font-size: 22px;
+        }
+        .header ul {
+            list-style: none;
+            display: flex;
+            padding-left: 20%;
+        }
+        .header li {
+            margin-right: 22px;
+        }
+        .header a {
+            position: relative;
+            font-family: 'Ibarra Real Nova', serif;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.651);
+            border-radius: 20px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        .header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon i {
+            font-size: 35px;
+            padding-right: 20px;
+        }
+        .section-1 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        
+        .container {
+            margin: 0; /* Ensure no additional margin */
+        }
+        .select-package {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        .select-package h4 {
+            font-size: 23px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 100;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .package-frame {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .package-frame .package1,
+        .package-frame .package2,
+        .package-frame .package3 {
+            width: calc(33.333% - 40px);
+            min-width: 250px;
+            height: auto;
+            border: 1px solid rgba(128, 128, 128, 0.288);
+            margin-bottom: 40px;
+            text-align: left;
+            font-size: 20px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        .select-package img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 5px solid #000000; 
+        }
+
+        .package-frame h1 {
+            padding: 20px;
+            font-size: 23px;
+        }
+        .package-frame a {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(119, 117, 117);
+            margin-top: auto;
+        }
+        .package-frame a:hover {
+            color: black;
+        }
+        .select-package input[type="submit"] {
+            padding: 10px 30px;
+            border-radius: 10px;
+            background-color: #F5ED34;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.5s ease;
+            display: block;
+            margin: 20px auto;
+        }
+        .select-package input[type="submit"]:hover {
+            background-color: #e6df26;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home2.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="event.html">EVENT & SPACE</a></li>
+            <li><a href="booking.html">BOOK NOW</a></li>
+        </ul>
+        <div class="right-icon">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+    </div>
+    
+    <div class="section-1">
+        <div class="select-package">
+            <h1 style="font-size: 22px;">Choose Per Pax</h1><br>
+            <div class="package-frame">
+                <div class="package1">
+                    <img src="user1.png" >
+                    <h1><u>200 Pax</u></h1>
+                    <p style="margin-left: 20px;"><b>RM5,000</b></p>
+                    <input type="submit" name="eventType" id="standard" value="Select">
+                </div>
+                <div class="package2">
+                    <img src="user2.png" >
+                    <h1><u>500 Pax</u></h1>
+                    <p style="margin-left: 20px;"><b>RM12,500</b></p>
+                    <input type="submit" name="eventType" id="premium" value="Select">
+                </div>
+                <div class="package3">
+                    <img src="user3.png" >
+                    <h1><u>1000 Pax</u></h1>
+                    <p style="margin-left: 20px;"><b>RM25,000</b></p>
+                    <input type="submit" name="eventType" id="deluxe" value="Select">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

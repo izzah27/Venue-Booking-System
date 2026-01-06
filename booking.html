@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" />
+    <title>Book Now</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 28px 30px;
+            background-color: #d9d39c;
+            width: 100%;
+            font-size: 22px;
+        }
+        .header ul {
+            list-style: none;
+            display: flex;
+            padding-left: 20%;
+        }
+        .header li {
+            margin-right: 22px;
+        }
+        .header a {
+            position: relative;
+            font-family: 'Ibarra Real Nova', serif;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.651);
+            border-radius: 20px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        .header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon i {
+            font-size: 25px;
+            padding-right: 15px;
+        }
+        .section-1 {
+            width: 100%;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-bg {
+            background-image: url(background.jpg);
+            width: 100%;
+            height: 350px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .image-bg h1 {
+            font-size: 60px;
+            letter-spacing: 0.1em;
+            font-family: 'Inria Sans';
+            color: #fff;
+            z-index: 1;
+        }
+        .select-dates-frame {
+            position: absolute;
+            bottom: -100px;
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            background-color: #f2ede5;
+            text-align: left;
+            padding: 30px;
+            font-size: 20px;
+            letter-spacing: 0.05em;
+            z-index: 2;
+        }
+        .dates-frame {
+            border: 1px solid grey;
+            padding: 20px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: grey;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dates-frame input[type="date"] {
+            border: none;
+            background-color: transparent;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        .dates-frame i {
+            padding: 0 20px;
+        }
+        .date-input {
+            display: inline-block;
+        }
+        .select-events {
+            margin-top: 150px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .select-events p {
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+            font-family: 'Inter';
+        }
+        .event-frame {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .event1, .event2, .event3 {
+            width: 300px;
+            height: 380px;
+            border: 1px solid rgba(128, 128, 128, 0.288);
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 20px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .select-events img {
+            width: 100%;
+            height: 238px;
+            object-fit: cover;
+        }
+        .select-events input[type="submit"] {
+            padding: 10px 30px;
+            border-radius: 10px;
+            background-color: #F5ED34;
+            font-weight: bold;
+            font-family: 'Inter';
+            font-size: 17px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.5s ease;
+        }
+        .select-events input[type="submit"]:hover {
+            background-color: #e6df26;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home2.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="event.html">EVENT & SPACE</a></li>
+            <li><a href="booking.html">BOOK NOW</a></li>
+        </ul>
+        <div class="right-icon">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="section-1">
+        <div class="image-bg">
+            <h1>THE WANKAY EVENT SPACE</h1>
+            <div class="select-dates-frame">
+                <span style="font-family: 'inter';">Select Dates</span><br>
+                <div class="dates-frame">
+                    <div class="date-input">
+                        <input type="date">
+                    </div>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <div class="date-input">
+                        <input type="date">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-events">
+            <p>Choose Events</p>
+            <div class="event-frame">
+                <div class="event1">
+                    <img src="image12.jpg" alt=""><br>
+                    <b><span style="padding-left: 20px;">Parties and Celebration</span></b><br>
+                    <input type="submit" name="eventType" id="parties" value="Select">
+                </div>
+                <div class="event2">
+                    <img src="hitea.jpg" alt=""><br>
+                    <b><span style="padding-left: 20px;">Hi-Tea</span></b><br>
+                    <input type="submit" name="eventType" id="hitea" value="Select">
+                </div>
+                <div class="event3">
+                    <img src="wed.jpg" alt=""><br>
+                    <b><span style="padding-left: 20px;">Wedding Ceremony</span></b><br>
+                    <input type="submit" name="eventType" id="wedding" value="Select">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #fff;
+            margin: 0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            background: #64642a;
+            color: #fff;
+        }
+        .header i {
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .header i:hover {
+            color: #127b8e;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .right-icon a i {
+            margin-right: 15px;
+        }
+        .user-p {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .user-p img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .body {
+            display: flex;
+        }
+        .side-bar {
+            width: 300px;
+            background: #c5c555;
+            min-height: 100vh;
+            transition: 500ms width;
+        }
+        .side-bar ul {
+            margin-top: 40px;
+            list-style: none;
+            border-top: 2px solid white;
+        }
+        .side-bar ul li {
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 15px 0px;
+            padding-left: 25px;
+            transition: 500ms background;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .side-bar ul li:hover {
+            background: #2ebad3;
+        }
+        .side-bar ul li a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .side-bar ul li a i {
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 23px;
+            color: #000;
+        }
+        #navbtn {
+            display: inline-block;
+            left: 20px;
+            font-size: 20px;
+            transition: 500ms color;
+            color: #eee;
+        }
+        #checkbox {
+            display: none;
+        }
+        #checkbox:checked ~ .body .side-bar {
+            width: 80px;
+        }
+        .content-container {
+            width: 100%;
+            padding: 20px;
+        }
+        .calendar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .calendar-navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+        .calendar-navigation button {
+            background: #64642a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .calendar-navigation span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .calendar {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+        }
+        .calendar th, .calendar td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            width: 14.28%;
+        }
+        .calendar th {
+            background-color: #f2f2f2;
+        }
+        .available {
+            background-color: green;
+            color: white;
+        }
+        .reserved {
+            background-color: red;
+            color: white;
+        }
+        .availability-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .availability-indicator div {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        .availability-indicator span {
+            margin-left: 5px;
+        }
+        .indicator-available {
+            width: 15px;
+            height: 15px;
+            background-color: green;
+            border-radius: 50%;
+        }
+        .indicator-reserved {
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .add-booking-btn {
+            background-color: #64642a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .booking-form {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .booking-form input, .booking-form select {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+        }
+        .booking-form button {
+            background-color: #64642a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="checkbox">
+    <div class="header">
+        <label for="checkbox">
+            <i id="navbtn" class="fas fa-bars" aria-hidden="true"></i>
+        </label>
+        <div class="right-icon">
+            <a href="home2.html">
+                <i class="fas fa-home" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <nav class="side-bar">
+            <div class="user-p">
+                <img src="userimg.png" alt="User Profile Picture">
+            </div>
+            <ul>
+                <li>
+                    <a href="StaffProfile.html">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span>PROFILE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookinglist.html">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                        <span>BOOKING</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="availability.html">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        <span>AVAILABILITY</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="welcome.html">
+                        <i class="fas fa-power-off" aria-hidden="true"></i>
+                        <span>LOGOUT</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content-container">
+            <div class="calendar-container">
+                <div class="calendar-navigation">
+                    <button onclick="previousMonth()">Previous</button>
+                    <span id="month-year">January 2024</span>
+                    <button onclick="nextMonth()">Next</button>
+                </div>
+                <table class="calendar" id="calendar">
+                    <!-- Calendar content will be injected by JavaScript -->
+                </table>
+                <div class="availability-indicator">
+                    <div><div class="indicator-available"></div><span>Available</span></div>
+                    <div><div class="indicator-reserved"></div><span>Reserved</span></div>
+                </div>
+                <button class="add-booking-btn" onclick="showBookingForm()">Add Booking</button>
+                <div class="booking-form" id="booking-form">
+                    <input type="text" id="event-name" placeholder="Event Name" required>
+                    <input type="date" id="event-date" required>
+                    <select id="event-status" required>
+                        <option value="available">Available</option>
+                        <option value="reserved">Reserved</option>
+                    </select>
+                    <button onclick="addBooking()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const calendar = document.getElementById('calendar');
+        const monthYear = document.getElementById('month-year');
+        const bookingForm = document.getElementById('booking-form');
+        let currentMonth = 0;
+        let currentYear = 2024;
+        const bookings = {};
+
+        const months = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        function loadCalendar(month, year) {
+            calendar.innerHTML = '';
+            monthYear.textContent = `${months[month]} ${year}`;
+            
+            const header = `<tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>`;
+            calendar.insertAdjacentHTML('beforeend', header);
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            let date = 1;
+
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    if (i === 0 && j < firstDay) {
+                        const cellText = document.createTextNode('');
+                        cell.appendChild(cellText);
+                    } else if (date > daysInMonth) {
+                        break;
+                    } else {
+                        const cellText = document.createTextNode(date);
+                        cell.appendChild(cellText);
+                        const bookingDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                        if (bookings[bookingDate]) {
+                            cell.classList.add(bookings[bookingDate]);
+                        }
+                        date++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendar.appendChild(row);
+            }
+        }
+
+        function nextMonth() {
+            currentMonth = (currentMonth + 1) % 12;
+            if (currentMonth === 0) currentYear++;
+            loadCalendar(currentMonth, currentYear);
+        }
+
+        function previousMonth() {
+            currentMonth = (currentMonth - 1 + 12) % 12;
+            if (currentMonth === 11) currentYear--;
+            loadCalendar(currentMonth, currentYear);
+        }
+
+        function showBookingForm() {
+            bookingForm.style.display = 'flex';
+        }
+
+        function addBooking() {
+            const eventName = document.getElementById('event-name').value;
+            const eventDate = document.getElementById('event-date').value;
+            const eventStatus = document.getElementById('event-status').value;
+
+            if (eventName && eventDate && eventStatus) {
+                bookings[eventDate] = eventStatus;
+                loadCalendar(currentMonth, currentYear);
+                bookingForm.style.display = 'none';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        window.onload = () => {
+            loadCalendar(currentMonth, currentYear);
+        };
+    </script>
+</body>
+</html>

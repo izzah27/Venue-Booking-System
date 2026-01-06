@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" />
+
+    <title>Sign Up</title>
+</head>
+<body>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background-color: #D9D39C;
+    background-size: cover;
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+}
+.wrapper{
+    width: 600px;
+    height: 750px;
+    margin-top: 5.5%;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.wrapper h1{
+    text-align: center;
+    font-weight: 200;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    font-size: 60px;
+    letter-spacing: 0.05em;
+}
+.wrapper input[type="text"],
+.wrapper input[type="password"]
+{
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    width: 390px;
+    border-bottom-color: black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+}
+.wrapper input[type="submit"]
+{
+    padding: 10px;
+    width: 390px;
+    height: 45px;
+    font-size: 15px;
+    margin-left: 100px;
+    background-color: #CDB433;
+    border: none;
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.wrapper input[type="submit"]:hover{
+    text-decoration: underline;
+    background-color: #b8a549;
+}
+.line1,
+.line2{
+    border: 1px solid grey;
+    width: 150px;
+    display: inline-block;
+    align-items: center; 
+    justify-content: center;
+}
+.line1{
+    margin-top: 27px;
+    margin-left: 130px;
+}
+.line2{
+    margin-top: 27px;
+}
+.already-have-account{
+    margin-top: 30px;
+    margin-left: 160px;
+    font-family: 'Inter';
+    color: rgba(0, 0, 0, 0.705);
+}
+.already-have-account a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+.already-have-account a:hover{
+    text-decoration: underline;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>Sign Up</h1>
+            <p style="text-align: center; font-family: inter; color: rgba(0, 0, 0, 0.705); padding-bottom: 30px;">Create a new account</p>
+            
+            <input type="text" name="fullname" id="fullname" placeholder="Enter full name" required><br>
+            <input type="text" name="email" id="email" placeholder="Enter email" required><br>
+            <input type="text" name="phoneNo" id="phoneNo" placeholder="Enter phone no" required><br>
+            <input type="text" name="address" id="address" placeholder="Enter address" required><br>
+            <input type="password" name="password" id="password" placeholder="Enter password" required><br>
+          
+            <input type="submit" name="submit" value="SIGN UP">
+        </form>
+        
+        <div class="line1"></div> 
+        <p style="display: inline-block;">or</p> 
+        <div class="line2"></div>
+
+        <div class="already-have-account">
+            <p>Already have an account? <a href="login.html"><b>Login</b></a></p>
+        </div>
+    </div>
+</body>
+</html>

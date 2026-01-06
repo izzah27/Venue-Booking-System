@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #fff;
+            margin: 0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            background: #64642a;
+            color: #fff;
+        }
+        .header i {
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .header i:hover {
+            color: #127b8e;
+        }
+        .right-icon {
+            margin-left: auto;
+        }
+        .right-icon a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .right-icon a i {
+            margin-right: 15px;
+        }
+        .user-p {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .user-p img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .body {
+            display: flex;
+        }
+        .side-bar {
+            width: 300px;
+            background: #c5c555;
+            min-height: 100vh;
+            transition: 500ms width;
+        }
+        .side-bar ul {
+            margin-top: 40px;
+            list-style: none;
+            border-top: 2px solid white;
+        }
+        .side-bar ul li {
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 15px 0px;
+            padding-left: 25px;
+            transition: 500ms background;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .side-bar ul li:hover {
+            background: #2ebad3;
+        }
+        .side-bar ul li a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .side-bar ul li a i {
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 23px;
+            color: #000;
+        }
+        #navbtn {
+            display: inline-block;
+            left: 20px;
+            font-size: 20px;
+            transition: 500ms color;
+            color: #eee;
+        }
+        #checkbox {
+            display: none;
+        }
+        #checkbox:checked ~ .body .side-bar {
+            width: 80px;
+        }
+        .content-container {
+            width: 100%;
+            padding: 20px;
+        }
+        .booking-list {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .booking-list th, .booking-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .booking-list th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .button-view {
+            background-color: #984caf;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button-delete {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .subheader {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+    <script>
+        function deleteBooking(event) {
+            if (confirm("Are you sure you want to delete this booking?")) {
+                // Find the row to delete
+                var row = event.target.closest('tr');
+                row.parentNode.removeChild(row);
+                // Here you can add AJAX call to delete the booking from the database if required
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="checkbox">
+    <div class="header">
+        <label for="checkbox">
+            <i id="navbtn" class="fas fa-bars" aria-hidden="true"></i>
+        </label>
+        <div class="right-icon">
+            <a href="home2.html">
+                <i class="fas fa-home" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <nav class="side-bar">
+            <div class="user-p">
+                <img src="userimg.png" alt="User Profile Picture">
+            </div>
+            <ul>
+                <li>
+                    <a href="StaffProfile.html">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span>PROFILE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookinglist.html">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                        <span>BOOKING</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="availability.html">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        <span>AVAILABILITY</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="welcome.html">
+                        <i class="fas fa-power-off" aria-hidden="true"></i>
+                        <span>LOGOUT</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="section-1">
+            <div class="content-container">
+                <div class="subheader Room">
+                    <i style="margin-right: 20px;"></i>BOOKING LIST
+                </div>
+                <div class="content-container">
+                    <table class="booking-list">
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Cust ID</th>
+                            <th>Name</th>
+                            <th>Event Name</th>
+                            <th>Reserve Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>E0001</td>
+                            <td>100001</td>
+                            <td>Mohd Haikal Bin Mohd Nawawi</td>
+                            <td>Hi-Tea</td>
+                            <td>01-02-2024</td>
+                            <td>
+                                <button class="button-view" onclick="window.location.href='viewbooking.html'"><i class="fas fa-eye" aria-hidden="true"></i> View</button>
+                                <button class="button-delete" onclick="deleteBooking(event)"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E0002</td>
+                            <td>100002</td>
+                            <td>Mark Adam Lee</td>
+                            <td>Wedding</td>
+                            <td>05-02-2024</td>
+                            <td>
+                                <button class="button-view" onclick="window.location.href='viewbooking.html'"><i class="fas fa-eye" aria-hidden="true"></i> View</button>
+                                <button class="button-delete" onclick="deleteBooking(event)"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Repeat similar rows for other bookings -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
